@@ -1,0 +1,51 @@
+package ru.nashev.try2.controller;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import ru.nashev.try2.dto.organization.OrganizationAddDTO;
+import ru.nashev.try2.dto.organization.OrganizationFilter;
+import ru.nashev.try2.dto.organization.OrganizationGetDTO;
+import ru.nashev.try2.dto.organization.OrganizationListDTO;
+import ru.nashev.try2.dto.organization.OrganizationUpdateDTO;
+import ru.nashev.try2.service.OrganizationService;
+
+import java.util.List;
+
+@Api(tags = "Organization API")
+@RequestMapping("/api/organization")
+@RestController
+@RequiredArgsConstructor
+public class OrganizationController {
+    private final OrganizationService service;
+
+    @ApiOperation("Find data with filter")
+    @PostMapping("/list")
+    public List<OrganizationListDTO> list(@RequestBody OrganizationFilter filter) {
+        return service.list(filter);
+    }
+
+    @ApiOperation("Find by Id")
+    @GetMapping("/{id}")
+    public OrganizationGetDTO get(@PathVariable("id") Long id) {
+        return service.get(id);
+    }
+
+    @ApiOperation("Add new data")
+    @PostMapping("/save")
+    public void add(@RequestBody OrganizationAddDTO input) {
+        service.add(input);
+    }
+
+    @ApiOperation("Update one data")
+    @PostMapping("/update")
+    public void update(@RequestBody OrganizationUpdateDTO input) {
+        service.update(input);
+    }
+}
