@@ -13,6 +13,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Version;
 import java.util.Date;
 
+/**
+ * Сущность для работы с записью таблиы документов пользователей в БД
+ * @author Nashev
+ */
 @Data
 @Entity
 public class UserDoc {

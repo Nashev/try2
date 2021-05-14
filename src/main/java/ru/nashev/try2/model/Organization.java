@@ -13,6 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Version;
 import java.util.List;
 
+/**
+ * Сущность для работы с записью таблиы организаций в БД
+ * @author Nashev
+ */
 @Data
 @Entity
 public class Organization {

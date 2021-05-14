@@ -8,11 +8,13 @@ import ru.nashev.try2.mapper.CountryMapper;
 import ru.nashev.try2.model.Country;
 import ru.nashev.try2.service.CountryService;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
+/**
+ * Реализация сервиса для работы со странами
+ * @author Nashev
+ */
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class CountryServiceImpl implements CountryService {
     private final CountryRepository repository;

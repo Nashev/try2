@@ -19,8 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Реализация сервиса для работы с пользователями
+ * @author Nashev
+ */
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class OrganizationServiceImpl implements OrganizationService {
     private final OrganizationRepository repository;

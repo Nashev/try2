@@ -15,7 +15,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
 /**
- * Пользователь
+ * Сущность для работы с записью таблиы пользователей в БД
+ * @author Nashev
  */
 @Data
 @Entity

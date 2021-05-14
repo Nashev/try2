@@ -11,13 +11,20 @@ import ru.nashev.try2.service.CountryService;
 
 import java.util.List;
 
-@Api(tags = "Dictionaries")
+/**
+ * Обработчик рест-сервиса по адресу http:localhost:8888/api/countries
+ * @author Nashev
+ */
+@Api(tags = "Dictionaries API")
 @RequestMapping("/api/countries")
 @RestController
 @RequiredArgsConstructor
 public class CountryController {
     private final CountryService countryService;
 
+    /**
+     * Команда получения списка известных сервису стран
+     */
     @ApiOperation("Get list of known Countries")
     @PostMapping
     public List<CountryDTO> list() {

@@ -11,6 +11,10 @@ import ru.nashev.try2.dto.office.OfficeListDTO;
 import ru.nashev.try2.dto.office.OfficeUpdateDTO;
 import ru.nashev.try2.model.Office;
 
+/**
+ * Объявление для генерации через mapstruct маппера офиса на DTO и обратно
+ * @author Nashev
+ */
 @Mapper(componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
@@ -21,5 +25,5 @@ import ru.nashev.try2.model.Office;
 public interface OfficeMapper extends GenericMultiMapper<Office, OfficeGetDTO, OfficeListDTO, OfficeAddDTO, OfficeUpdateDTO> {
 
     @Mapping(target = "organization", source = "orgId")
-    public abstract Office add(OfficeAddDTO dto);
+    Office add(OfficeAddDTO dto);
 }

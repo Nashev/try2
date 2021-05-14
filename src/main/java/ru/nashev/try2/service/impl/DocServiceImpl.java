@@ -8,11 +8,13 @@ import ru.nashev.try2.mapper.DocMapper;
 import ru.nashev.try2.model.Doc;
 import ru.nashev.try2.service.DocService;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
+/**
+ * Реализация сервиса для работы с типами документов
+ * @author Nashev
+ */
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class DocServiceImpl implements DocService {
     private final DocRepository repository;

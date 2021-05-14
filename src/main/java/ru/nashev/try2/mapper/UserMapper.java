@@ -13,6 +13,10 @@ import ru.nashev.try2.dto.user.UserListDTO;
 import ru.nashev.try2.dto.user.UserUpdateDTO;
 import ru.nashev.try2.model.User;
 
+/**
+ * Объявление для генерации через mapstruct маппера пользователя на DTO и обратно
+ * @author Nashev
+ */
 @Mapper(
         componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
@@ -28,18 +32,18 @@ public interface UserMapper extends GenericMultiMapper<User, UserGetDTO, UserLis
     @Mapping(target = "docDate", source = "userDoc.docDate")
     @Mapping(target = "citizenshipName", source = "citizenship.name")
     @Mapping(target = "citizenshipCode", source = "citizenship.code")
-    public abstract UserGetDTO get(User entity);
+    UserGetDTO get(User entity);
 
     @Mapping(target = "userDoc.doc", source = "docCode")
     @Mapping(target = "userDoc.docName", source = "docName")
     @Mapping(target = "userDoc.docNumber", source = "docNumber")
     @Mapping(target = "userDoc.docDate", source = "docDate")
     @Mapping(target = "citizenship", source = "citizenshipCode")
-    public abstract User add(UserAddDTO dto);
+    User add(UserAddDTO dto);
 
     @Mapping(target = "userDoc.docName", source = "docName")
     @Mapping(target = "userDoc.docNumber", source = "docNumber")
     @Mapping(target = "userDoc.docDate", source = "docDate")
     @Mapping(target = "citizenship", source = "citizenshipCode")
-    public abstract void update(@MappingTarget User entity, UserUpdateDTO dto);
+    void update(@MappingTarget User entity, UserUpdateDTO dto);
 }

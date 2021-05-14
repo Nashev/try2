@@ -14,13 +14,13 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.2.Final/mapstruct-processor-1.4.2.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
         </processorPath>
-        <module name="ru.bellintegrator.nashev.try2" />
+        <module name="try2" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ru.bellintegrator.nashev.try2" options="-parameters -Amapstruct.suppressGeneratorTimestamp=true -Amapstruct.defaultComponentModel=spring" />
+      <module name="try2" options="-parameters -Amapstruct.suppressGeneratorTimestamp=true -Amapstruct.defaultComponentModel=spring" />
     </option>
   </component>
 </project>

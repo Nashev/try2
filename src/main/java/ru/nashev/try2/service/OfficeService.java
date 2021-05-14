@@ -6,5 +6,9 @@ import ru.nashev.try2.dto.office.OfficeGetDTO;
 import ru.nashev.try2.dto.office.OfficeListDTO;
 import ru.nashev.try2.dto.office.OfficeUpdateDTO;
 
-public interface OfficeService extends GenericService<OfficeGetDTO, OfficeListDTO, OfficeFilter, OfficeAddDTO, OfficeUpdateDTO> {
+/**
+ * Интерфейс сервиса для работы с офисами
+ * @author Nashev
+ */
+public interface OfficeService extends GenericMultiService<OfficeGetDTO, OfficeListDTO, OfficeFilter, OfficeAddDTO, OfficeUpdateDTO> {
 }

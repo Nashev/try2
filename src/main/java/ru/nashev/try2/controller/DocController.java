@@ -11,13 +11,20 @@ import ru.nashev.try2.service.DocService;
 
 import java.util.List;
 
-@Api(tags = "Dictionaries")
+/**
+ * Обработчик рест-сервиса по адресу http:localhost:8888/api/docs
+ * @author Nashev
+ */
+@Api(tags = "Dictionaries API")
 @RequestMapping("/api/docs")
 @RestController
 @RequiredArgsConstructor
 public class DocController {
     private final DocService docService;
 
+    /**
+     * Команда получения списка известных сервису типов документов
+     */
     @ApiOperation("Get list of known doc types")
     @PostMapping
     public List<DocDTO> list() {

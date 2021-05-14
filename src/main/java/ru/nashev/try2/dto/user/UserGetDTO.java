@@ -2,6 +2,10 @@ package ru.nashev.try2.dto.user;
 
 import lombok.Value;
 
+/**
+ * Исходящий DTO для команды получения информации об одном пользователе
+ * @author Nashev
+ */
 @Value
 public class UserGetDTO {
     String id;
@@ -15,5 +19,5 @@ public class UserGetDTO {
     String docDate;
     String citizenshipName;
     String citizenshipCode;
-    String isIdentified;
+    Boolean isIdentified;
 }

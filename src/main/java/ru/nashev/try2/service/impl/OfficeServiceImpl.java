@@ -19,8 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Реализация сервиса для работы с офисами
+ * @author Nashev
+ */
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class OfficeServiceImpl implements OfficeService {
     private final OfficeRepository repository;
@@ -32,7 +35,7 @@ public class OfficeServiceImpl implements OfficeService {
                 repository.findAll(
                         (Specification<Office>) (root, query, cb) -> {
                             List<Predicate> predicates = new ArrayList<>();
-                            predicates.add(cb.notEqual(root.get("organization").get("id"), filter.getOrgId()));
+                            predicates.add(cb.equal(root.get("organization").get("id"), filter.getOrgId()));
                             filter.getName().ifPresent(s -> predicates.add(cb.notEqual(cb.locate(root.get("name"), s), 0)));
                             filter.getPhone().ifPresent(s -> predicates.add(cb.notEqual(cb.locate(root.get("phone"), s), 0)));
                             filter.getIsActive().ifPresent(b -> predicates.add(cb.equal(root.get("isActive"), b)));

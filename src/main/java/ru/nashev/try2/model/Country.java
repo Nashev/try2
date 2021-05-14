@@ -9,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
-
+/**
+ * Сущность для работы с записью таблиы стран в БД
+ * @author Nashev
+ */
 @Data
 @Entity
 public class Country {
