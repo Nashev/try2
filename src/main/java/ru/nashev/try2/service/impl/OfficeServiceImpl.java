@@ -62,6 +62,6 @@ public class OfficeServiceImpl implements OfficeService {
     }
 
     private Supplier<RecordNotFound> getNotFoundSupplier(Long id) {
-        return () -> new RecordNotFound("Office " + id + " does not exists.");
+        return () -> new RecordNotFound("Офис " + id + " не существует.");
     }
 }

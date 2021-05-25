@@ -8,7 +8,7 @@ import lombok.Value;
  */
 @Value
 public class UserGetDTO {
-    String id;
+    Long id;
     String firstName;
     String secondName;
     String middleName;

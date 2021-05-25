@@ -11,6 +11,8 @@ import ru.nashev.try2.dto.ResultDataDTO;
 import ru.nashev.try2.dto.ResultErrorDTO;
 import ru.nashev.try2.dto.ResultSuccessDTO;
 
+import java.util.List;
+
 /**
  * Обработчик рест-сервисов, заворачивающий результаты их работы в ResultDataDTO, если это не ошибка и не чужой DTO
  * @author Nashev
@@ -35,12 +37,12 @@ public class ResponseBodyHandler implements ResponseBodyAdvice<Object> {
     public Object beforeBodyWrite(Object body, MethodParameter methodParameter, MediaType mediaType, Class<? extends HttpMessageConverter<?>> aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse response) {
         if (body == null) {
             return new ResultDataDTO(new ResultSuccessDTO());
-        } else if (!body.getClass().getName().startsWith("ru.nashev.try2.dto")) { // skip swagger classes etc
-            return body;
         } else if (body instanceof ResultErrorDTO) {
             return body;
-        } else {
+        } else if (serverHttpRequest.getURI().getPath().startsWith("/api/")) { // в свой ResultDataDTO заворачиваем всё своё, кроме ошибок. В том числе массивы. И не заворачиваем чужое, например от swagger
             return new ResultDataDTO(body);
+        } else {
+            return body;
         }
     }
 }

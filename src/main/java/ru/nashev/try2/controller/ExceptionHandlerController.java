@@ -42,6 +42,7 @@ public class ExceptionHandlerController {
     public ResultErrorDTO onConstraintValidationException(ConstraintViolationException e) {
         final String violations = e.getConstraintViolations().stream()
                 .map(violation -> violation.getPropertyPath().toString() + " (" + violation.getMessage() + ")")
+                .sorted()
                 .collect(Collectors.joining("\n  "));
         return new ResultErrorDTO("Проблемы с аргументами:\n  " + violations);
     }
@@ -63,6 +64,7 @@ public class ExceptionHandlerController {
     public ResultErrorDTO onMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         final String violations = e.getBindingResult().getFieldErrors().stream()
                 .map(violation -> violation.getField() + " (" + violation.getDefaultMessage() + ")")
+                .sorted()
                 .collect(Collectors.joining("\n  "));
         return new ResultErrorDTO("Ошибка в запросе, проблемы с полями:\n  " + violations);
     }

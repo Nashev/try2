@@ -1,5 +1,6 @@
 package ru.nashev.try2.dto.organization;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
@@ -12,6 +13,7 @@ import java.util.Optional;
  * @author Nashev
  */
 @Data
+@AllArgsConstructor
 @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class OrganizationFilter {
     @Size(max = 255) @NotNull private String name;

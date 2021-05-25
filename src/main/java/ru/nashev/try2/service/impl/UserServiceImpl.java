@@ -66,6 +66,6 @@ public class UserServiceImpl implements UserService {
     }
 
     private Supplier<RecordNotFound> getNotFoundSupplier(Long id) {
-        return () -> new RecordNotFound("User " + id + " does not exists.");
+        return () -> new RecordNotFound("Пользователь " + id + " не существует.");
     }
 }

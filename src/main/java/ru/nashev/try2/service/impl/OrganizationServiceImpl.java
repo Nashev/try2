@@ -61,6 +61,6 @@ public class OrganizationServiceImpl implements OrganizationService {
     }
 
     private Supplier<RecordNotFound> getNotFoundSupplier(Long id) {
-        return () -> new RecordNotFound("Organization " + id + " does not exists.");
+        return () -> new RecordNotFound("Организация " + id + " не существует.");
     }
 }

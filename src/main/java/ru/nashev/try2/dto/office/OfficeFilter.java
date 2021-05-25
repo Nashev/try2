@@ -1,5 +1,6 @@
 package ru.nashev.try2.dto.office;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.validation.constraints.Min;
@@ -13,6 +14,7 @@ import java.util.Optional;
  * @author Nashev
  */
 @Data
+@AllArgsConstructor
 @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class OfficeFilter {
     @Min(0) @NotNull private Long orgId;

@@ -27,11 +27,12 @@ INSERT INTO organization (id, version, name, full_name, inn, kpp, address, phone
         INSERT INTO user (id, version, office_id, first_name, second_name, middle_name, position, phone, citizenship_id, is_identified) VALUES (2, 1, 1, 'Петров', 'Пётр', 'Петрович', 'Начальник', '+71234567891', 1, true);
             INSERT INTO user_doc (id, version, doc_id, doc_name, doc_number, doc_date) VALUES (2, 1, 3, 'Временное удостоверение, выданное взамен военного билета', '1234 567891', DATE '2009-10-20');
     INSERT INTO office (id, version, org_id, name, address, phone, is_active) VALUES (2, 1, 1, 'Филлиал', 'Нск, ул. Строителей, д.10', '+78008888889', true);
-INSERT INTO organization (id, version, name, full_name, inn, kpp, address, phone, is_active) VALUES (2, 1, 'MMM', 'ООО "MMM"', '2222222', '2222', 'Омск, ул. Копателей, д.2', '+78003333333', true);
-    INSERT INTO office (id, version, org_id, name, address, phone, is_active) VALUES (3, 1, 2, 'Главкасса', 'Омск, ул. Копателей, д.2', '+78003333333', true);
+    INSERT INTO office (id, version, org_id, name, address, phone, is_active) VALUES (3, 1, 1, 'Закрытый филлиал', 'Нск, ул. Строителей, д.9', '+78008888886', false);
+INSERT INTO organization (id, version, name, full_name, inn, kpp, address, phone, is_active) VALUES (2, 1, 'MMM', 'ООО "MMM"', '12222222', '2222', 'Омск, ул. Копателей, д.2', '+78003333333', true);
+    INSERT INTO office (id, version, org_id, name, address, phone, is_active) VALUES (4, 1, 2, 'Главкасса', 'Омск, ул. Копателей, д.2', '+78003333333', true);
         INSERT INTO user (id, version, office_id, first_name, second_name, middle_name, position, phone, citizenship_id, is_identified) VALUES (3, 1, 2, 'Сидоров', 'Сидор', 'Сидорович', 'Владелец', '+71234567892', 1, true);
             INSERT INTO user_doc (id, version, doc_id, doc_name, doc_number, doc_date) VALUES (3, 1, 10, 'Паспорт гражданина Российской Федерации', '1234 567892', DATE '2000-04-01');
 INSERT INTO organization (id, version, name, full_name, inn, kpp, address, phone, is_active) VALUES (3, 1, 'Microsoft', 'Microsoft Ltd', '3333333', '3333', 'New York', '1111111111', false);
-    INSERT INTO office (id, version, org_id, name, address, phone, is_active) VALUES (4, 1, 3, 'Main campus', 'New York', '1111111111', true);
+    INSERT INTO office (id, version, org_id, name, address, phone, is_active) VALUES (5, 1, 3, 'Main campus', 'New York', '1111111111', true);
         INSERT INTO user (id, version, office_id, first_name, second_name, middle_name, position, phone, citizenship_id, is_identified) VALUES (4, 1, 4, 'Smith', 'John', 'Roland', 'Субподрядчик', '+11234567890', 4, false);
             INSERT INTO user_doc (id, version, doc_id, doc_name, doc_number, doc_date) VALUES (4, 1, 4, 'Паспорт иностранного гражданина', '987654', DATE '2010-09-11');

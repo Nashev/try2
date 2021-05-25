@@ -29,7 +29,7 @@ import ru.nashev.try2.model.User;
 public interface UserMapper extends GenericMultiMapper<User, UserGetDTO, UserListDTO, UserAddDTO, UserUpdateDTO> {
     @Mapping(target = "docName", source = "userDoc.docName")
     @Mapping(target = "docNumber", source = "userDoc.docNumber")
-    @Mapping(target = "docDate", source = "userDoc.docDate")
+    @Mapping(target = "docDate", source = "userDoc.docDate", dateFormat = "dd.MM.yy")
     @Mapping(target = "citizenshipName", source = "citizenship.name")
     @Mapping(target = "citizenshipCode", source = "citizenship.code")
     UserGetDTO get(User entity);
@@ -37,13 +37,13 @@ public interface UserMapper extends GenericMultiMapper<User, UserGetDTO, UserLis
     @Mapping(target = "userDoc.doc", source = "docCode")
     @Mapping(target = "userDoc.docName", source = "docName")
     @Mapping(target = "userDoc.docNumber", source = "docNumber")
-    @Mapping(target = "userDoc.docDate", source = "docDate")
+    @Mapping(target = "userDoc.docDate", source = "docDate", dateFormat = "dd.MM.yy")
     @Mapping(target = "citizenship", source = "citizenshipCode")
     User add(UserAddDTO dto);
 
     @Mapping(target = "userDoc.docName", source = "docName")
     @Mapping(target = "userDoc.docNumber", source = "docNumber")
-    @Mapping(target = "userDoc.docDate", source = "docDate")
+    @Mapping(target = "userDoc.docDate", source = "docDate", dateFormat = "dd.MM.yy")
     @Mapping(target = "citizenship", source = "citizenshipCode")
     void update(@MappingTarget User entity, UserUpdateDTO dto);
 }
